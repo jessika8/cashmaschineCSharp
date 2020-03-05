@@ -23,7 +23,7 @@ namespace cashmashine
         //     }
         // }
 
-        void checkPin()
+         void checkPin()
         {
         // dont use it too much, it can get messi
         START:
@@ -36,7 +36,7 @@ namespace cashmashine
             if (pinNumber == userInput)
             {
                 Console.WriteLine("Whoa, you are correct");
-                Console.WriteLine("What next? 1.Take cash? 2.Change pin? 3.Add cash?");
+                Console.WriteLine("What next? 1.Take cash? 2.Change pin? 3.Add cash? 4.Exit");
                 userInput = Console.ReadLine();
                 if (userInput == "1")
                 {
@@ -49,6 +49,10 @@ namespace cashmashine
                 else if (userInput == "3")
                 {
                     addCash();
+                }
+                else if (userInput == "4") 
+                {
+                    exit();
                 }
             }
             else
@@ -74,7 +78,7 @@ namespace cashmashine
             {
                 int newBalance = balance - userInput;
                 Console.WriteLine("Your new balance is {0}", newBalance);
-                Console.WriteLine("What next? 1.Exit? 2.Change pin?");
+                Console.WriteLine("What next? 1.Exit? 2.Change pin? 3.Add cash");
                 userString = Console.ReadLine();
 
                 if (userString == "1")
@@ -84,6 +88,10 @@ namespace cashmashine
                 else if (userString == "2")
                 {
                     changePIN();
+                }
+                else if (userString == "3")
+                {
+                    addCash();
                 }
                 else
                 {
